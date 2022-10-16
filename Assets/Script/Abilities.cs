@@ -102,7 +102,7 @@ public class Abilities : MonoBehaviour
             targetCircle.GetComponent<Image>().enabled = false;
         }
 
-        if (skillshot.GetComponent<Image>().enabled == true && Input.GetMouseButtonDown(0))
+        if (skillshot.GetComponent<Image>().enabled == true && Input.GetMouseButton(0))
         {
             isCooldown = true;
             abilityImage1.fillAmount = 1;
