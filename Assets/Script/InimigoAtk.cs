@@ -35,6 +35,15 @@ public class InimigoAtk : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
+        if (colisao.gameObject.tag == "BalaG")
+        {
+            vida = vida - 6;
+            BarraHP.fillAmount = 1 / (vidaMax / vida);
+            if (vida <= 0)
+            {
+                Destroy(this.gameObject);
+            }
+        }
     }
 }
     

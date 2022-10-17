@@ -12,6 +12,7 @@ public class Mover : MonoBehaviour
     public Animator animator;
     public GameObject bala;
     public GameObject Spawn;
+    public GameObject BalaG;
 
 
     // Start is called before the first frame update
@@ -60,6 +61,11 @@ public class Mover : MonoBehaviour
                 transform.LookAt(hit.point);
                 Instantiate(bala,Spawn.transform.position, Spawn.transform.rotation);
             }
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            Instantiate(BalaG, Spawn.transform.position, Spawn.transform.rotation);
+
         }
     }
 }
