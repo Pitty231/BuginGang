@@ -10,6 +10,9 @@ public class Mover : MonoBehaviour
     public float rotateSpeedMovement = 0.075f;
     float rotateVelocity;
     public Animator animator;
+    public GameObject bala;
+    public GameObject Spawn;
+
 
     // Start is called before the first frame update
     void Start()
@@ -34,14 +37,6 @@ public class Mover : MonoBehaviour
                 // Movimento
                 agente.SetDestination(hit.point);
                 posicaoDest = hit.point;
-
-               /* // Rotacao
-                Quaternion rotationToLookAt = Quaternion.LookRotation(hit.point - transform.position);
-                float rotationY = Mathf.SmoothDampAngle(transform.eulerAngles.y, rotationToLookAt.eulerAngles.y, ref rotateVelocity, rotateSpeedMovement * (Time.deltaTime * 5));
-
-                transform.eulerAngles = new Vector3(0, rotationY, 0);
-                {
-                }*/
             }
         }
 
@@ -55,6 +50,16 @@ public class Mover : MonoBehaviour
         else
         {
             animator.SetBool("Corre", true);
+        }
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit hit;
+
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity))
+            {
+                transform.LookAt(hit.point);
+                Instantiate(bala,Spawn.transform.position, Spawn.transform.rotation);
+            }
         }
     }
 }
