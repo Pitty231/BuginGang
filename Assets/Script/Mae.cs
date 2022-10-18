@@ -6,6 +6,7 @@ public class Mae : MonoBehaviour
 {
     public GameObject Inimigo1;
     public GameObject Inimigo2;
+    public GameObject Inimigo3;
     public int onda = 1;
     public float tempo;
     // Start is called before the first frame update
@@ -36,7 +37,9 @@ public class Mae : MonoBehaviour
                     else
                     {
                         Instantiate(Inimigo2, transform.position, Quaternion.identity);
+                        Instantiate(Inimigo3, transform.position, Quaternion.identity);
                     }
+
                 }
                 onda++;
 

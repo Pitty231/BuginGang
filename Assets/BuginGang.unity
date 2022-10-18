@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.42800888, g: 0.46160716, b: 0.49036223, a: 1}
+  m_IndirectSpecularColor: {r: 0.42800874, g: 0.46160692, b: 0.49036247, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -169,8 +169,85 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Inimigo1: {fileID: 8943964811514505185, guid: dda50ddddf9554d488bffda57f2d24ec, type: 3}
   Inimigo2: {fileID: 7235865728650034934, guid: f785a7d8148d45a49bd481741d961d43, type: 3}
+  Inimigo3: {fileID: 7315668215897967180, guid: e4379cc8f89234440bd0c40b25eafbe6, type: 3}
   onda: 1
   tempo: 0
+--- !u!1 &137938065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 137938068}
+  - component: {fileID: 137938067}
+  - component: {fileID: 137938066}
+  m_Layer: 5
+  m_Name: Peido
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &137938066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137938065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 5f579c2249acbb744952e2ac416f5b37, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &137938067
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137938065}
+  m_CullTransparentMesh: 1
+--- !u!224 &137938068
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137938065}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 488553893}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -275.6, y: -168}
+  m_SizeDelta: {x: 70, y: 70}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &456102098
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,6 +354,7 @@ GameObject:
   - component: {fileID: 488553892}
   - component: {fileID: 488553891}
   - component: {fileID: 488553890}
+  - component: {fileID: 488553894}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -358,6 +436,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1966500829}
+  - {fileID: 137938068}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -366,6 +445,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &488553894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488553889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 929957a06fb2c174fbbc0e9ebb890624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityImage1: {fileID: 1966500830}
+  cooldown1: 5
+  ability1: 113
+  Peido: {fileID: 1364155073}
+  Player: {fileID: 543450651914676626}
+  abilityImage2: {fileID: 137938066}
+  cooldown2: 10
+  ability2: 101
 --- !u!4 &916058223 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 439232264955290610, guid: b0fd99b62af3aa543928eecd7aa0610a, type: 3}
@@ -503,6 +602,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 543450651914676626}
   smoothnees: 0.5
+--- !u!1 &1364155073 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5800649952222128866, guid: a3dbbd23e023a054dad28d49cb7bc287, type: 3}
+  m_PrefabInstance: {fileID: 6946998761080550120}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1883171826
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,7 +687,7 @@ GameObject:
   - component: {fileID: 1966500831}
   - component: {fileID: 1966500830}
   m_Layer: 5
-  m_Name: Image
+  m_Name: powpow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -629,7 +733,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ffa8f2b1f03a31641987b31e746341bc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 008de50411f7ffa4bbe9227561d1fed5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
