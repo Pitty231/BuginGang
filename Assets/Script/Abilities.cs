@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,12 +12,14 @@ public class Abilities : MonoBehaviour
     public float cooldown1 = 5;
     bool isCooldown = false;
     public KeyCode ability1;
-
+    public GameObject Peido;
+    public Transform Player;
+/*
     //Ability 1 Input Variables
     Vector3 position;
     public Canvas ability1Canvas;
     public Image skillshot;
-    public Transform player;
+    public Transform player;*/
 
     [Header("Ability 2")]
     public Image abilityImage2;
@@ -24,18 +27,18 @@ public class Abilities : MonoBehaviour
     bool isCooldown2 = false;
     public KeyCode ability2;
 
-    //Ability 2 Input Variables
+   /* //Ability 2 Input Variables
     public Image targetCircle;
     public Image indicatorRangeCircle;
     public Canvas ability2Canvas;
     private Vector3 posUp;
-    public float maxAbility2Distance;
-
+    public float maxAbility2Distance;*/
+/*
     [Header("Ability 3")]
     public Image abilityImage3;
     public float cooldown3 = 7;
     bool isCooldown3 = false;
-    public KeyCode ability3;
+    public KeyCode ability3;*/
 
 
     // Start is called before the first frame update
@@ -43,11 +46,11 @@ public class Abilities : MonoBehaviour
     {
         abilityImage1.fillAmount = 0;
         abilityImage2.fillAmount = 0;
-        abilityImage3.fillAmount = 0;
+       /* abilityImage3.fillAmount = 0;
 
         skillshot.GetComponent<Image>().enabled = false;
         targetCircle.GetComponent<Image>().enabled = false;
-        indicatorRangeCircle.GetComponent<Image>().enabled = false;
+        indicatorRangeCircle.GetComponent<Image>().enabled = false;*/
     }
 
     // Update is called once per frame
@@ -55,7 +58,7 @@ public class Abilities : MonoBehaviour
     {
         Ability1();
         Ability2();
-        Ability3();
+       /* Ability3();
 
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -87,32 +90,20 @@ public class Abilities : MonoBehaviour
         distance = Mathf.Min(distance, maxAbility2Distance);
 
         var newHitPos = transform.position + hitPosDir * distance;
-        ability2Canvas.transform.position = (newHitPos);
+        ability2Canvas.transform.position = (newHitPos);*/
 
     }
 
     void Ability1()
     {
-        if (Input.GetKey(ability1) && isCooldown == false)
+        if (Input.GetKey(ability1) && isCooldown== false)
         {
-            skillshot.GetComponent<Image>().enabled = true;
-
-            //Disable Other UI
-            indicatorRangeCircle.GetComponent<Image>().enabled = false;
-            targetCircle.GetComponent<Image>().enabled = false;
-        }
-
-        if (skillshot.GetComponent<Image>().enabled == true && Input.GetMouseButton(0))
-        {
-            isCooldown = true;
+            isCooldown= true;
             abilityImage1.fillAmount = 1;
         }
-
         if (isCooldown)
         {
-            abilityImage1.fillAmount -= 1 / cooldown1 * Time.deltaTime;
-            skillshot.GetComponent<Image>().enabled = false;
-
+            abilityImage1.fillAmount -= 1/cooldown1*Time.deltaTime;
             if (abilityImage1.fillAmount <= 0)
             {
                 abilityImage1.fillAmount = 0;
@@ -125,26 +116,12 @@ public class Abilities : MonoBehaviour
     {
         if (Input.GetKey(ability2) && isCooldown2 == false)
         {
-            indicatorRangeCircle.GetComponent<Image>().enabled = true;
-            targetCircle.GetComponent<Image>().enabled = true;
-
-            //Disable Skillshot UI
-            skillshot.GetComponent<Image>().enabled = false;
-        }
-
-        if (targetCircle.GetComponent<Image>().enabled == true && Input.GetMouseButtonDown(0))
-        {
             isCooldown2 = true;
             abilityImage2.fillAmount = 1;
         }
-
         if (isCooldown2)
         {
             abilityImage2.fillAmount -= 1 / cooldown2 * Time.deltaTime;
-
-            indicatorRangeCircle.GetComponent<Image>().enabled = false;
-            targetCircle.GetComponent<Image>().enabled = false;
-
             if (abilityImage2.fillAmount <= 0)
             {
                 abilityImage2.fillAmount = 0;
@@ -153,7 +130,7 @@ public class Abilities : MonoBehaviour
         }
     }
 
-    void Ability3()
+/*    void Ability3()
     {
         if (Input.GetKey(ability3) && isCooldown3 == false)
         {
@@ -171,5 +148,5 @@ public class Abilities : MonoBehaviour
                 isCooldown3 = false;
             }
         }
-    }
+    }*/
 }

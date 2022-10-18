@@ -13,6 +13,9 @@ public class Mover : MonoBehaviour
     public GameObject bala;
     public GameObject Spawn;
     public GameObject BalaG;
+    public GameObject Peido;
+    public bool PoderUsado = false;
+    public float TempoPeido;
 
 
     // Start is called before the first frame update
@@ -66,6 +69,28 @@ public class Mover : MonoBehaviour
         {
             Instantiate(BalaG, Spawn.transform.position, Spawn.transform.rotation);
 
+        }if (PoderUsado == false)
+        {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Peido.SetActive(true);
+            PoderUsado = true;  
+            
+        }
+            
+        }
+        else
+        {
+            TempoPeido += Time.deltaTime;
+            if (TempoPeido >= 4)
+            {
+                Peido.SetActive(false);
+            }
+            if (TempoPeido >= 10)
+            {
+                TempoPeido = 0;
+                PoderUsado = false;
+            }
         }
     }
 }
